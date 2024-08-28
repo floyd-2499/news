@@ -1,0 +1,35 @@
+@import "../../assets/styles/variables.scss";
+
+.footer-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: $secondary-color;
+
+    .logo-container {
+        width: 80px;
+        height: auto;
+    }
+
+    .copyright-container {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        color: $white-color;
+    }
+}
+
+@media (max-width: $horizontal-mobile) {
+    .footer-main {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 10px;
+
+        .logo-container {
+            width: fit-content;
+        }
+    }
+}

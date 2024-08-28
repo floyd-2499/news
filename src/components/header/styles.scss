@@ -1,0 +1,108 @@
+@import "../../assets/styles/variables.scss";
+
+.header-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 20px;
+    box-sizing: border-box;
+
+    .logo-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .logo-container {
+            width: fit-content;
+
+            img {
+                width: 100px;
+                height: auto;
+            }
+        }
+
+        .icon-container {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+
+    .menu-container {
+        max-width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row;
+        gap: 50px;
+
+        .menu-item {
+            text-decoration: none;
+
+            .menu {
+                font-size: 14px;
+                color: $secondary-color;
+                font-weight: 500;
+                cursor: pointer;
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                &.active-menu {
+                    color: $primary-color;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $tab-mini) {
+    .header-main {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        background-color: $white-color;
+        z-index: 1;
+
+        .logo-section {
+            width: 100%;
+            z-index: 2;
+
+            .icon-container {
+                display: block;
+            }
+        }
+
+        .menu-container {
+            height: 100vh;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            // position: fixed;
+            // top: 0;
+            // left: 0;
+            padding-top: 50px;
+            box-sizing: border-box;
+            background-color: $white-color;
+            z-index: 1;
+
+            .menu-item {
+                .menu {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
