@@ -10,6 +10,7 @@ import { NewYorkTimesAction, NewYorkTimesReset } from "../../api/slices/newYorkT
 import { NewYorkTimesApiFormatter } from "../new-york-times";
 import { NewsApiFormatter } from "../news-api";
 import { TheGuardianApiFormatter } from "../the-guardian";
+import LoaderMain from "../../components/loader";
 
 export const ArticleCard = ({ article }) => {
     return (
@@ -124,6 +125,7 @@ const HomeMain = () => {
             <div className="section-container">
                 <div className="section-title">New York Times Articles:</div>
                 <div className="articles-section">
+                    {nyTimesLoading && <LoaderMain />}
                     {nyTimesArticles?.map(article => {
                         return (
                             <ArticleCard article={article} key={article?.id} />
@@ -134,6 +136,7 @@ const HomeMain = () => {
             <div className="section-container">
                 <div className="section-title">News API Org Articles:</div>
                 <div className="articles-section">
+                    {newsApiLoading && <LoaderMain />}
                     {newsApiArticles?.map(article => {
                         return (
                             <ArticleCard article={article} key={article?.id} />
@@ -144,6 +147,7 @@ const HomeMain = () => {
             <div className="section-container">
                 <div className="section-title">The Guardian Articles:</div>
                 <div className="articles-section">
+                    {theGuardianLoading && <LoaderMain />}
                     {theGuardianArticles?.map(article => {
                         return (
                             <ArticleCard article={article} key={article?.id} />

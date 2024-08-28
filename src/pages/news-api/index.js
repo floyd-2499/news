@@ -61,7 +61,7 @@ const NEWSApiMain = () => {
     return (
         <div className="page-main">
             <NewsFilters requestApi={requestApi} />
-            {error?.message || articles?.length === 0 && (
+            {error?.message && (
                 <div className="error-message">Failed to load articles. Please try again!</div>
             )}
             {isLoading && (
