@@ -10,7 +10,7 @@ import { ArticleCard } from "../home";
 import LoaderMain from "../../components/loader";
 
 export const NewYorkTimesApiFormatter = (articles) => {
-    const newStructure = articles.map((item, index) => {
+    const newStructure = articles?.map((item, index) => {
         return {
             id: index,
             author: item?.byline?.original,
